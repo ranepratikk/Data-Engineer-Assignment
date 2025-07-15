@@ -7,7 +7,7 @@ import pathlib
 st.set_page_config(page_title="📦 Shipment Dashboard", layout="wide")
 DATA_PATH = pathlib.Path("output/flattened_shipments.csv")
 
-@st.cache
+@st.cache_data
 def load_data(path):
     if not path.exists():
         st.error(f"❌ {path} not found. Run the flatten step first.")
